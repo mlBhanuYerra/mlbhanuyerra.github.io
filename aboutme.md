@@ -1,17 +1,12 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: A man is but a product of his thoughts; what he things, he becomes. - Gandhi
 bigimg: "/img/img_1272.png"
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Bhanu Yerra. An engineering consultant by title but really a coffee addict by day and Netflix addict by night. Love to cook, workout, dream, travel, read, listen to music, just the usual stuff.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Seattle - India - Pacific Northwest
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Curious about machine learning and artifical intelligence. 
