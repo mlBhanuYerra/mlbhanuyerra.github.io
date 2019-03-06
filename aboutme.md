@@ -9,7 +9,8 @@ bigimg: "/img/img_1272.png"
 Bhanu Yerra is a Supervisory Planner at the engineering consultancy firm WSP USA in Seattle, WA. He is expereinced in providing consulting and advisory services primiarly in travel demand forecasting and ridership forecasting discplines for Seattle area clients: Washington Department of Transportation, City of Seattle, Sound Transit, Washington State Ferries, Community Transit. He has 16 years of technical experience in travel demand model calibration and validation, forecasting, transit ridership/patronage forecasting, toll traffic forecasting, statistical/econometric analyses, GIS technologies etc.
 
 ## <b> Education and Awards </b>
-Mr. Yerra received his MS in Transporation Engineering from University of Minnesota in 2002, and his BTech in Civil Engineering from Indian Institute of Technology, Madras in 2000. He recevied Sommerfeld Fellowship Department of Civil Engineering at University of Minnesta awarded to the best applicant to their graduate program. He is a co-winner of the Charles M. Tiebout Prize in 2003, awarded by Western Regional Science Association to the best student paper published in The Annals of Regional Science.
+Mr. Yerra received his MS in Transporation Engineering from University of Minnesota in 2002, and his BTech in Civil Engineering from Indian Institute of Technology, Madras in 2000.
+He recevied Sommerfeld Fellowship Department of Civil Engineering at University of Minnesta awarded to the best applicant to their graduate program. He is a co-winner of the Charles M. Tiebout Prize in 2003, awarded by Western Regional Science Association to the best student paper published in The Annals of Regional Science.
 
 ## <b> Publications and Presentations </b>
 * Bhanu Yerra, “Using EMME’s Path Analysis Toll to Compute Facility Specific Pure Travel Times and Costs,” presented at Model City 2014, 23rd International Emme User's Conference, Seattle, Washington, October 2014.
