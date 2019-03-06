@@ -6,9 +6,7 @@ tags: [Generative models, Mixture Models, Bernoulli, MNIST, Handwritten digits, 
 comments: true
 ---
 
-# Clustering Handwritten Digits using Mixture of Bernoulli Distributions
-
-This is documentation of a personal project to learn and apply Bernoulli Mixture Models approach for unsupervised learning of handwritten digits dataset.<br>
+The intent of this blog is to summarize and document a personal project I did after completion of a "specialization" on Machine Learning on Coursera platform.  This blog documents application of Bernoulli Mixture Models to unsupervised learning of handwritten digits dataset.<br>
 
 <b>Reference/Inspiration</b>: <b><i> Pattern Recognition and Machine Learning</i></b> by <i> Christopher M. Bishop.</i> Chapter 9, Figure 9.10.<br>
 <b>Dataset</b>: <a href="http://mldata.org/repository/data/viewslug/mnist-original/">MNIST</a> Handwritten Digits. <br>
@@ -17,21 +15,21 @@ This is documentation of a personal project to learn and apply Bernoulli Mixture
 
 # Mixture of Bernoulli Distribution
 
-First, consider a single multivariate Bernoulli distribution of $D$ independent binary variables $x_i \in \{0, 1\}$, where $i = 1,...,D$, each of which is in turn a univariate Bernoulli distribtion with parameter $\mu_i$, 
+First, consider a single multivariate Bernoulli distribution of $$D$$ independent binary variables $$x_i \in \{0, 1\}$$, where $$i = 1,...,D$$, each of which is in turn a univariate Bernoulli distribtion with parameter $$\mu_i$$, 
 
 
 $$p(\mathbf{x}\,|\, \boldsymbol{\mu}) = \displaystyle\prod_{i=1}^D \mu_i^{x_i}(1-\mu_i)^{(1-x_i)} $$ 
 
-where, $\mathbf{x} = (x_1,...,x_D)^T$, and  $\boldsymbol{\mu} = (\mu_1,...,\mu_D)^T$.
+where, $$\mathbf{x} = (x_1,...,x_D)^T$$, and  $$\boldsymbol{\mu} = (\mu_1,...,\mu_D)^T$$.
 
-Now consider a finite mixture of $K$ multivariate Bernoulli distributions given by,
+Now consider a finite mixture of $$K$$ multivariate Bernoulli distributions given by,
 
-$$p(\mathbf{x}\,|\, \boldsymbol{\mu}, \boldsymbol{\pi}) = \displaystyle\sum_{k=1}^K  \pi_k p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)$$ <br>
+$$p(\mathbf{x}\,|\, \boldsymbol{\mu}, \boldsymbol{\pi}) = \displaystyle\sum_{k=1}^K  \pi_k p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)$$ 
 
 where,<br>
-<br>$\boldsymbol\mu = \{\boldsymbol\mu_1,...,\boldsymbol\mu_K\}$ 
+<br>$$\boldsymbol\mu = \{\boldsymbol\mu_1,...,\boldsymbol\mu_K\}$$ 
 or
- $\mu_{ki} =
+ $$\mu_{ki} =
  \begin{pmatrix}  
   \mu_{11} & \mu_{12} & \cdots & \mu_{1D} \\
   \mu_{2,1} & \mu_{22} & \cdots & \mu_{2D} \\
