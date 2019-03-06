@@ -36,7 +36,7 @@ avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-# title-img: /path/to/image
+title-img: "/img/avatar-icon.png"
 
 # --- Background colour/image options --- #
 
@@ -71,8 +71,8 @@ author:
 # You can reorder the items to define the link order.
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
-  rss: true
-  email: "someone@example.com"
+  rss: false
+  email: "bhanuyerra@gmail.com"
 # facebook: daattali
   github: mlBhanuYerra
 #  twitter: daattali
