@@ -326,15 +326,15 @@ finWeights, finMeans = experiments([2,3,9], 3, 1000)
 ```
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_0.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_0.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_1.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_1.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_2.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_10_2.png)
 
 
 
@@ -352,19 +352,19 @@ print(finWeights)
 ```
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_0.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_0.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_1.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_1.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_2.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_2.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_3.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_11_3.png)
 
 
     [ 0.26757071  0.24729179  0.23207817  0.25305934]
@@ -378,19 +378,19 @@ print(finWeights)
 ```
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_0.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_0.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_1.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_1.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_2.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_2.png)
 
 
 
-![png](img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_3.png)
+![png](/img/HandwrittenDigits_BernoullieEM_files/HandwrittenDigits_BernoullieEM_12_3.png)
 
 
     [ 0.1912005   0.15238828  0.34022079  0.31619044]
