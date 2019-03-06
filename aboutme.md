@@ -2,7 +2,7 @@
 layout: page
 title: About me
 subtitle: Why you'd want to go on a date with me
-bigimg: "/img/hello_world.jpeg"
+bigimg: "/img/img_1272.png"
 ---
 
 My name is Inigo Montoya. I have the following qualities:
