@@ -6,6 +6,7 @@ bigimg: "/img/img_1272.png"
 ---
 
 <b>About</b>
+
 Bhanu Yerra is
 
 My name is Bhanu Yerra. An engineering consultant by title but really a coffee addict by day and Netflix addict by night. Love to cook, workout, dream, travel, read, listen to music, just the usual stuff.
