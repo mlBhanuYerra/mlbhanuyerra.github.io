@@ -5,7 +5,7 @@ subtitle: A man is but a product of his thoughts; what he things, he becomes. - 
 bigimg: "/img/img_1272.png"
 ---
 
-#<b>About</b>
+#About
 Bhanu Yerra is a Supervisory Planner at the engineering consultancy firm WSP USA in Seattle, WA. He is expereinced in providing consulting and advisory services primiarly in travel demand forecasting and ridership forecasting discplines for Seattle area clients: Washington Department of Transportation, City of Seattle, Sound Transit, Washington State Ferries, Community Transit. He has 16 years of technical experience in travel demand model calibration and validation, forecasting, transit ridership/patronage forecasting, toll traffic forecasting, statistical/econometric analyses, GIS technologies etc.
 
 #<b> Education and Awards </b>
