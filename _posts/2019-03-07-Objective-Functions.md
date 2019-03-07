@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Introduction to Objective Functiosn Used in Machine Learning
+title: An Introduction to Objective Functions Used in Machine Learning
 subtitle: Whats the difference between Maximum Likelihood & Cross-Entropy?
 tags: [Theory, Objective Functions, Loss Functions, Cross-Entropy, Maximum Likelihood Estimation, Statistical Framework]
 comments: true
@@ -14,33 +14,54 @@ The primary focus of this article is the evaluation component (objective functio
 
 Objective functions used in reinforcement learning and generative adversarial networks (GANs) are not covered in this article. And the objective functions from various popular ML methods and papers, like Triplet Loss Function, Neural Style Transfer Loss Function, YOLO Loss Function, will be presented as a follow-up article.
 
-1. Objective Functions for Regression
+<b>1. Objective Functions for Regression</b>
 
 A select objective functions commonly used in linear regression models are presented in this section. For reference, see a list of available loss functions from Keras Library at https://keras.io/losses/
+
 The problem entails establishing a linear relationship between x, an independent variable from a D-dimensional space ℝᴰ, and y, the dependent variable ∈ ℝ¹ as shown below
 
-Where, 𝜀ᵢ is random error due to (i) wrong choice of a linear relationship, (ii) omission of othe relevant independent variables, (iii) meaurement error, and (iv) instrumental variables — measured variables are proxies of “real” variables. The objective of linear regression is to estimate the ws given a random sample of the population.
+$$\boldsymbol{y_i}(\boldsymbol{x_i, w}) = w_0+w_1 x_{i1}+w_2 x_{i2} +...+w_D x_{iD}+\varepsilon_i ,\quad i=1,2,..N$$
+
+Where, 𝜀ᵢ is random error due to (i) wrong choice of a linear relationship, (ii) omission of othe relevant independent variables, (iii) meaurement error, and (iv) instrumental variables — measured variables are proxies of “real” variables. The objective of linear regression is to estimate the <b>w</b>s given a random sample of the population.
+
+$$\boldsymbol{\hat{y}_i}(\boldsymbol{x_i, \hat{w}}) = \hat{w}_0+\hat{w}_1 x_{i1}+\hat{w}_2 x_{i2} +...+\hat{w}_D x_{iD} ,\quad i=1,2,..N$$
 
 and the difference between the true dependent variable yᵢ and the model estimated dependent variable ŷᵢ is referred as residual error: eᵢ = yᵢ -ŷᵢ. The parameters ws are estimated by minimizing an objective function, which takes various functional forms as presented below.
-Mean Squared Error:
+
+<b>Mean Squared Error:</b>
 Mostly commonly used in linear regression models. The mean squared error, sometimes called residual sum of squares is:
 
-Mean Absolute Error:
+$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2$$
+
+<b>Mean Absolute Error:</b>
 Similar to MSE, mean absolute error is as shown below:
 
-Mean Absolute Percentage Error:
+$$\boldsymbol\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n} \mid\hat{y_i} - y_i\mid$$
+
+<b>Mean Absolute Percentage Error:</b>
 Similar to mean absolute error, mean absolute percentage error is as shown below:
 
-Mean Squared Logarithmic Error:
+$$\boldsymbol\mathcal{L} = \frac{100\%}{N}\sum_{i=1}^{N} \left |\frac{\hat{y_i} - y_i} {y_i}\right |$$
+
+<b>Mean Squared Logarithmic Error:</b>
 Similar to MSE, but calculated on a logarithmic scale. Target variable should be non-negative, but can be equal to zero. If the target is never zero, the addition of 1 in the logarithm can be dropped.
 
-Regularization:
+$$\boldsymbol\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n} ({log(\hat{y_i}+1) - log(y_i + 1})^2$$
+
+<b>Regularization:</b>
 In cases where the model complexity or limited data points leads to over-fitting of regression models, a common technique known as regularization is employed. Regularization adds a penalty to the objective function to control the magnitude of the parameters.
 
-Where R(w) represent regularization function on the parameters w and 𝜆 represents a hyper-parameter that needs to be tuned as part of the model calibration.
-Ridge Regression: Adds a L2-norm of the parameters to the objective function. Also known as weight decay, as the learning algorithm leads the weights to decay towards zero.
+$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \lambda {R}(\boldsymbol{w})$$
 
-Lasso Regression: Adds an L-1 norm of the parameters to the objective function. Lasso regression leads to a sparse model as it drives some of the parameters to zero.
+where R(<b>w</b>) represent regularization function on the parameters <b>w</b> and 𝜆 represents a hyper-parameter that needs to be tuned as part of the model calibration.
+<b><i>Ridge Regression:</b></i> Adds a L2-norm of the parameters to the objective function. Also known as weight decay, as the learning algorithm leads the weights to decay towards zero.
+
+$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^2 = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \sum_{i=0}^D {w_i}^2$$
+
+<b><i>Lasso Regression:</b></i> Adds an L-1 norm of the parameters to the objective function. Lasso regression leads to a sparse model as it drives some of the parameters to zero.
+
+$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^1   =    \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 +  \frac{\lambda}{2} \sum_{i=0}^D |w_i|$$
+
 
 For more on regularization, see: https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a
 2. Objective Functions for Classification
