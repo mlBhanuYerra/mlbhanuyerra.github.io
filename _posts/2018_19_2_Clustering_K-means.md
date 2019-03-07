@@ -118,7 +118,7 @@ plt.ylabel("Next Eruption (minutes)")
 
 
 
-![png](Clustering_K-means_files/Clustering_K-means_3_1.png)
+![png](/img/Clustering_K-means_files/Clustering_K-means_3_1.png)
 
 
 ### Code for native implementation of K-means Clustering Algorithm
@@ -257,7 +257,7 @@ for i in range(len(pDs)):
 
 
 
-![png](Clustering_K-means_files/Clustering_K-means_7_1.png)
+![png](/img/Clustering_K-means_files/Clustering_K-means_7_1.png)
 
 
 ## A second example: Seed Dataset
@@ -299,7 +299,7 @@ a = pd.plotting.scatter_matrix(wheat1, alpha=0.8, figsize=(15,15),diagonal='kde'
 ```
 
 
-![png](Clustering_K-means_files/Clustering_K-means_9_0.png)
+![png](/img/Clustering_K-means_files/Clustering_K-means_9_0.png)
 
 
 
@@ -324,7 +324,7 @@ a = pd.scatter_matrix(wheat1, alpha=0.8, figsize=(15,15),diagonal='kde', c=list(
 
 
 
-![png](Clustering_K-means_files/Clustering_K-means_10_2.png)
+![png](/img/Clustering_K-means_files/Clustering_K-means_10_2.png)
 
 
 
