@@ -54,10 +54,6 @@ $$
 \boldsymbol\mu_k\,=\,\frac{\sum_{n}\,r_{nk}\mathbf{x}_n}{\sum_{n}\,r_{nk}}
 $$
 <li>Step 4. Evaluate the distortion measure $J$ and check for convergence.  If not converged, repeat from step 2.
-</ui>
-<br>
-<br>
-
 
 
 
