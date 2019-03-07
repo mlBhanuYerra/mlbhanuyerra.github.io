@@ -6,8 +6,6 @@ tags: [Clustering, K-means, Successive optimization, E-M algorithm]
 comments: true
 ---
 
-# Centroid-based Clustering: K-means Algorithm
-
 Application of K-means algorithm on a simple dataset.<br>
 
 <b>Reference/Inspiration</b>: <b><i> Pattern Recognition and Machine Learning</i></b> by <i> Christopher M. Bishop.</i> Chapter 9, Figure 9.1.<br>
