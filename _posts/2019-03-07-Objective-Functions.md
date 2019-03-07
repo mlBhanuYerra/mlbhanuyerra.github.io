@@ -31,36 +31,36 @@ and the difference between the true dependent variable yᵢ and the model estima
 <b>Mean Squared Error:</b>
 Mostly commonly used in linear regression models. The mean squared error, sometimes called residual sum of squares is:
 
-$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2$$
+$$\boldsymbol\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2$$
 
 <b>Mean Absolute Error:</b>
 Similar to MSE, mean absolute error is as shown below:
 
-$$\boldsymbol\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n} \mid\hat{y_i} - y_i\mid$$
+$$\boldsymbol\mathscr{L} = \frac{1}{n}\sum_{i=1}^{n} \mid\hat{y_i} - y_i\mid$$
 
 <b>Mean Absolute Percentage Error:</b>
 Similar to mean absolute error, mean absolute percentage error is as shown below:
 
-$$\boldsymbol\mathcal{L} = \frac{100\%}{N}\sum_{i=1}^{N} \left |\frac{\hat{y_i} - y_i} {y_i}\right |$$
+$$\boldsymbol\mathscr{L} = \frac{100\%}{N}\sum_{i=1}^{N} \left |\frac{\hat{y_i} - y_i} {y_i}\right |$$
 
 <b>Mean Squared Logarithmic Error:</b>
 Similar to MSE, but calculated on a logarithmic scale. Target variable should be non-negative, but can be equal to zero. If the target is never zero, the addition of 1 in the logarithm can be dropped.
 
-$$\boldsymbol\mathcal{L} = \frac{1}{n}\sum_{i=1}^{n} ({log(\hat{y_i}+1) - log(y_i + 1})^2$$
+$$\boldsymbol\mathscr{L} = \frac{1}{n}\sum_{i=1}^{n} ({log(\hat{y_i}+1) - log(y_i + 1})^2$$
 
 <b>Regularization:</b>
 In cases where the model complexity or limited data points leads to over-fitting of regression models, a common technique known as regularization is employed. Regularization adds a penalty to the objective function to control the magnitude of the parameters.
 
-$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \lambda {R}(\boldsymbol{w})$$
+$$\boldsymbol\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \lambda {R}(\boldsymbol{w})$$
 
 where R(<b>w</b>) represent regularization function on the parameters <b>w</b> and 𝜆 represents a hyper-parameter that needs to be tuned as part of the model calibration.
 <b><i>Ridge Regression:</b></i> Adds a L2-norm of the parameters to the objective function. Also known as weight decay, as the learning algorithm leads the weights to decay towards zero.
 
-$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^2 = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \sum_{i=0}^D {w_i}^2$$
+$$\boldsymbol\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^2 = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \sum_{i=0}^D {w_i}^2$$
 
 <b><i>Lasso Regression:</b></i> Adds an L-1 norm of the parameters to the objective function. Lasso regression leads to a sparse model as it drives some of the parameters to zero.
 
-$$\boldsymbol\mathcal{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^1   =    \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 +  \frac{\lambda}{2} \sum_{i=0}^D |w_i|$$
+$$\boldsymbol\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^1   =    \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 +  \frac{\lambda}{2} \sum_{i=0}^D |w_i|$$
 
 
 For more on regularization, see: https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a
