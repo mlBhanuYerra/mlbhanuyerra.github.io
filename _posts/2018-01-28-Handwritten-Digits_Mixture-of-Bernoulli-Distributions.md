@@ -35,18 +35,18 @@ or
   \mu_{2,1} & \mu_{22} & \cdots & \mu_{2D} \\
   \vdots  & \vdots  & \ddots & \vdots  \\
   \mu_{K1} & \mu_{K2} & \cdots & \mu_{KD} 
- \end{pmatrix}$,
-$\boldsymbol\pi = \{\pi_1,...,\pi_K\}$, and
+ \end{pmatrix}$$,
+$$\boldsymbol\pi = \{\pi_1,...,\pi_K\}$$, and
 
 $$p(\mathbf{x}\,|\, \boldsymbol{\mu}_k) = \displaystyle\prod_{i=1}^D \mu_ki^{x_i}(1-\mu_{ki})^{(1-x_i)} $$ 
 
-Given a data set of $\mathbf{X} = \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$, with each observation represented as a mixture of K Bernoulli distributions, then the log likelihood function is:
+Given a data set of $$\mathbf{X} = \left\{\mathbf{x}_1,...,\mathbf{x}_N\right\}$$, with each observation represented as a mixture of K Bernoulli distributions, then the log likelihood function is:
 
 $$\mathrm{ln}\,p(\mathbf{X}\,|\,\boldsymbol{\mu},\boldsymbol{\pi}) = \displaystyle\sum_{n=1}^N\mathrm{ln}\left\{\displaystyle\sum_{k=1}^K \pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)\right\}$$
 
 The appearance of the summation inside the logarithm in the above function means maximixum likelihood solution no longer has a closed form solution.
 
-To maximize the log likelihood function using Expection-Maximization approach, consider an explicit latent variable $\mathbf{z}$ associated with each observation $\mathbf{x}$, where $\mathbf{z}=(z_1,...,z_K)^T$ is a binary K-dimensional variable having a single component equal to 1, and all others set to 0. The latent variable $\mathbf{z}$ can be considered as a membership indicator for each observation. The marginal distribution of $\mathbf{z}$ is specified in terms of the mixing coefficients $\pi_k$, such that $p(z_k = 1) =\,\pi_k$, or
+To maximize the log likelihood function using Expection-Maximization approach, consider an explicit latent variable $$\mathbf{z}$$ associated with each observation $$\mathbf{x}$$, where $$\mathbf{z}=(z_1,...,z_K)^T$$ is a binary K-dimensional variable having a single component equal to 1, and all others set to 0. The latent variable $$\mathbf{z}$$ can be considered as a membership indicator for each observation. The marginal distribution of $$\mathbf{z}$$ is specified in terms of the mixing coefficients $$\pi_k$$, such that $$p(z_k = 1) =\,\pi_k$$, or
 
 $$p(\mathbf{z}\,|\,\boldsymbol{\pi}) = \displaystyle\prod_{k=1}^K \pi_k^{z_k}$$
 
@@ -54,7 +54,7 @@ We can write the conditional distribution of $\mathbf{x}$, given the latent vari
 
 $$p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu}) = \displaystyle\prod_{k=1}^K\,p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)^{z_k}$$
 
-Now formulate the probability of the compelte-data (observed $\mathbf{x}$ and latent $\mathbf{z}$) using Bayes' theorem, $p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})\,p(\mathbf{z})$.
+Now formulate the probability of the compelte-data (observed $\mathbf{x}$ and latent $$\mathbf{z}$$) using Bayes' theorem, $$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})\,p(\mathbf{z})$$.
 
 For the complete-data, the probability is
 
@@ -76,13 +76,13 @@ $$
 \end{align*}
 $$
 
-Notice that the above log likelihood function can be considered as a linear combination of $z_{nk}$. Since the expectation of a sum is the sum of the expectations, we can write the expectation of the complete-data log likelihood functions with respect to the posterior distribution of the latent variable as:
+Notice that the above log likelihood function can be considered as a linear combination of $$z_{nk}$$. Since the expectation of a sum is the sum of the expectations, we can write the expectation of the complete-data log likelihood functions with respect to the posterior distribution of the latent variable as:
 
 $$
 \mathbb{E}_{\mathbf{Z}}\left[\mathrm{ln}\,p(\mathbf{X},\mathbf{Z}\,|\,\boldsymbol{\mu},\boldsymbol{\pi})\right] = \displaystyle\sum_{n=1}^{N}\,\displaystyle\sum_{k=1}^{K} \gamma(z_{nk}) \left\{\mathrm{ln}\,\pi_{k}+ \displaystyle\sum_{i=1}^D \left[x_{ni}\,\mathrm{ln}\,\mu_{ki}+(1-x_{ni})\,\mathrm{ln}\,(1-\mu_{ki})\right]\right\}
 $$
 
-where, $\gamma(z_{nk}) = \mathbb{E}[z_{nk}]$ is the posterior probability or responsibility of the mixture component $k$ given the data point $x_n$.
+where, $$\gamma(z_{nk}) = \mathbb{E}[z_{nk}]$$ is the posterior probability or responsibility of the mixture component $$k$$ given the data point $$x_n$$.
 <br>
 ## E-M Algorithm for the Mixture of Bernoulli Distributions:
 With the above background, the E-M algorithm takes the following form.
