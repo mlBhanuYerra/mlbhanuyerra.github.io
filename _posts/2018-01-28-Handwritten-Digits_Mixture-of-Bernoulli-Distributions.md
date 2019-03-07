@@ -17,7 +17,6 @@ The intent of this blog is to summarize and document a personal project I did af
 
 First, consider a single multivariate Bernoulli distribution of $$D$$ independent binary variables $$x_i \in \{0, 1\}$$, where $$i = 1,...,D$$, each of which is in turn a univariate Bernoulli distribtion with parameter $$\mu_i$$, 
 
-
 $$p(\mathbf{x}\,|\, \boldsymbol{\mu}) = \displaystyle\prod_{i=1}^D \mu_i^{x_i}(1-\mu_i)^{(1-x_i)} $$ 
 
 where, $$\mathbf{x} = (x_1,...,x_D)^T$$, and  $$\boldsymbol{\mu} = (\mu_1,...,\mu_D)^T$$.
@@ -54,23 +53,20 @@ $$p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu}) = \displaystyle\prod_{k=1}^K\,p(
 Now formulate the probability of the complete-data (observed $$\mathbf{x}$$ and latent $$\mathbf{z}$$) using Bayes' theorem,
 $$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})p(\mathbf{z})$$.
 For the complete-data, the probability is
-$$
-\begin{align*}
+
+$$\begin{align*}
  p(\mathbf{X},\mathbf{Z}\,|\,\boldsymbol{\mu},\boldsymbol{\pi}) &= \displaystyle\prod_{n=1}^{N}\,p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu})\,p(\mathbf{z}\,|\,\boldsymbol{\pi}) \\
      &=\displaystyle\prod_{n=1}^{N}\,\displaystyle\prod_{k=1}^{K} \pi_{k}^{z_{nk}} \left( p(\mathbf{x}\,|\,\mu_{k}\right)^{z_{nk}} \\
     & = \displaystyle\prod_{n=1}^{N}\,\displaystyle\prod_{k=1}^{K} \pi_{k}^{z_{nk}} \left( \displaystyle\prod_{i=1}^D \mu_{ki}^{x_{ni}}(1-\mu_{ki})^{(1-x_{ni})}\right)^{z_{nk}} \\
-\end{align*}
-$$
+\end{align*}$$
 
 The corresponding complete-data log likelihood functions is:
 
-$$
-\begin{align*}
+$$\begin{align*}
 \mathrm{ln}\,p(\mathbf{X},\mathbf{Z}\,|\,\boldsymbol{\mu},\boldsymbol{\pi}) &= \displaystyle\sum_{n=1}^{N}\,\displaystyle\sum_{k=1}^{K} z_{nk} \left\{ \mathrm{ln}\,\left(\pi_{k}\,\displaystyle\prod_{i=1}^D \mu_{ki}^{x_{ni}}(1-\mu_{ki})^{(1-x_{ni})}\right)\right\}\\
 &=\displaystyle\sum_{n=1}^{N}\,\displaystyle\sum_{k=1}^{K} z_{nk} \left\{\mathrm{ln}\,\pi_{k}+ \displaystyle\sum_{i=1}^D \mathrm{ln}\,\left(\mu_{ki}^{x_{ni}}(1-\mu_{ki})^{(1-x_{ni})}\right)\right\}\\
 &=\displaystyle\sum_{n=1}^{N}\,\displaystyle\sum_{k=1}^{K} z_{nk} \left\{\mathrm{ln}\,\pi_{k}+ \displaystyle\sum_{i=1}^D \left[x_{ni}\,\mathrm{ln}\,\mu_{ki}+(1-x_{ni})\,\mathrm{ln}\,(1-\mu_{ki})\right]\right\}\\
-\end{align*}
-$$
+\end{align*}$$
 
 Notice that the above log likelihood function can be considered as a linear combination of $$z_{nk}$$. Since the expectation of a sum is the sum of the expectations, we can write the expectation of the complete-data log likelihood functions with respect to the posterior distribution of the latent variable as:
 
@@ -85,18 +81,21 @@ With the above background, the E-M algorithm takes the following form.
 <br>
 <b>E-Step</b>:<br>
 Calculation of the responsibilites make the E step of the E-M algorithm.
+
 $$\gamma(z_{nk})\,=\,\mathbb{E} \left[ z_{nk} \right] \,=\,\frac{\pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)}{\displaystyle\sum_{j=1}^K\,\pi_j\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_j)}$$
-<br>
-<b>M-Step</b>:
+
+<b>M-Step</b>:<br>
 Maximizing the expectation of the complete-data log likelihood with respect to $$\boldsymbol\mu_k$$ and $$\boldsymbol\pi_k$$ yields the M step of the E-M algorithm:
 
 $$\boldsymbol\mu_k\,=\,\frac{1}{N_k}\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})\mathbf{x}_n$$
+
 and
+
 $$\pi_{k}\,=\,\frac{N_k}{N}$$
+
 where, $$N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$$ 
 
 <br>
-
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
