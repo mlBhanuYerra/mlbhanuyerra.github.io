@@ -47,17 +47,13 @@ $$\mathrm{ln}\,p(\mathbf{X}\,|\,\boldsymbol{\mu},\boldsymbol{\pi}) = \displaysty
 The appearance of the summation inside the logarithm in the above function means maximixum likelihood solution no longer has a closed form solution.
 
 To maximize the log likelihood function using Expection-Maximization approach, consider an explicit latent variable $$\mathbf{z}$$ associated with each observation $$\mathbf{x}$$, where $$\mathbf{z}=(z_1,...,z_K)^T$$ is a binary K-dimensional variable having a single component equal to 1, and all others set to 0. The latent variable $$\mathbf{z}$$ can be considered as a membership indicator for each observation. The marginal distribution of $$\mathbf{z}$$ is specified in terms of the mixing coefficients $$\pi_k$$, such that $$p(z_k = 1) =\,\pi_k$$, or
-
 $$p(\mathbf{z}\,|\,\boldsymbol{\pi}) = \displaystyle\prod_{k=1}^K \pi_k^{z_k}$$
-
 We can write the conditional distribution of $$\mathbf{x}$$, given the latent variable as
-
 $$p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu}) = \displaystyle\prod_{k=1}^K\,p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)^{z_k}$$
 
-Now formulate the probability of the compelte-data (observed $$\mathbf{x}$$ and latent $$\mathbf{z}$$) using Bayes' theorem, $$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})p(\mathbf{z})$$.
-
+Now formulate the probability of the complete-data (observed $$\mathbf{x}$$ and latent $$\mathbf{z}$$) using Bayes' theorem,
+$$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})p(\mathbf{z})$$.
 For the complete-data, the probability is
-
 $$
 \begin{align*}
  p(\mathbf{X},\mathbf{Z}\,|\,\boldsymbol{\mu},\boldsymbol{\pi}) &= \displaystyle\prod_{n=1}^{N}\,p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu})\,p(\mathbf{z}\,|\,\boldsymbol{\pi}) \\
@@ -89,9 +85,9 @@ With the above background, the E-M algorithm takes the following form.
 <br>
 <b>E-Step</b>:<br>
 Calculation of the responsibilites make the E step of the E-M algorithm.
-$$\gamma(z_{nk})\,=\,\mathbb{E}\left[z_{nk}\right]\,=\,\frac{\pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)}{\displaystyle\sum_{j=1}^K\,\pi_j\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_j)}$$
+$$\gamma(z_{nk})\,=\,\mathbb{E} \left[ z_{nk} \right] \,=\,\frac{\pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)}{\displaystyle\sum_{j=1}^K\,\pi_j\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_j)}$$
 <br>
-<b>M-Step</b>:  
+<b>M-Step</b>:
 Maximizing the expectation of the complete-data log likelihood with respect to $$\boldsymbol\mu_k$$ and $$\boldsymbol\pi_k$$ yields the M step of the E-M algorithm:
 
 $$\boldsymbol\mu_k\,=\,\frac{1}{N_k}\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})\mathbf{x}_n$$
@@ -100,11 +96,6 @@ $$\pi_{k}\,=\,\frac{N_k}{N}$$
 where, $$N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$$ 
 
 <br>
-
-
-
-
-
 
 ```python
 import numpy as np
