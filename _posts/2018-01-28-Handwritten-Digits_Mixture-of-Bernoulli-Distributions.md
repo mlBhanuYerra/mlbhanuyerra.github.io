@@ -54,7 +54,7 @@ We can write the conditional distribution of $\mathbf{x}$, given the latent vari
 
 $$p(\mathbf{x}\,|\,\mathbf{z},\boldsymbol{\mu}) = \displaystyle\prod_{k=1}^K\,p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)^{z_k}$$
 
-Now formulate the probability of the compelte-data (observed $\mathbf{x}$ and latent $$\mathbf{z}$$) using Bayes' theorem, $$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})\,p(\mathbf{z})$$.
+Now formulate the probability of the compelte-data (observed $$\mathbf{x}$$ and latent $$\mathbf{z}$$) using Bayes' theorem, $$p(\mathbf{x},\mathbf{z}) = p(\mathbf{x}\,|\,\mathbf{z})\,p(\mathbf{z})$$.
 
 For the complete-data, the probability is
 
@@ -94,7 +94,7 @@ $$
 $$
 <br>
 <b>M-Step</b>:  
-Maximizing the expectation of the complete-data log likelihood with respect to $\boldsymbol\mu_k$ and $\boldsymbol\pi_k$ yields the M step of the E-M algorithm:
+Maximizing the expectation of the complete-data log likelihood with respect to $$\boldsymbol\mu_k$$ and $$\boldsymbol\pi_k$$ yields the M step of the E-M algorithm:
 
 $$
 \boldsymbol\mu_k\,=\,\frac{1}{N_k}\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})\mathbf{x}_n
@@ -102,7 +102,7 @@ $$ and
 $$
 \pi_{k}\,=\,\frac{N_k}{N}
 $$
-where, $N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$ 
+where, $$N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$$ 
 
 <br>
 
