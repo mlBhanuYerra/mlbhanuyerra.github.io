@@ -6,11 +6,10 @@ tags: [Theory, Objective Functions, Loss Functions, Cross-Entropy, Maximum Likel
 comments: true
 ---
 
-Objective Functions Used in Machine Learning
 Developing machine learning applications can be viewed as consisting of three components [1]: a representation of data, an evaluation function, and an optimization method to estimate the parameter of the machine learning model. This is true for supervised, unsupervised and reinforcement learning.
 The primary focus of this article is the evaluation component (objective functions or loss functions) of the ML tasks, and is divided into the following sections:
-Objective functions for regression
-Objective functions for classification
+1. Objective functions for regression
+2. Objective functions for classification
 Objective functions used in reinforcement learning and generative adversarial networks (GANs) are not covered in this article. And the objective functions from various popular ML methods and papers, like Triplet Loss Function, Neural Style Transfer Loss Function, YOLO Loss Function, will be presented as a follow-up article.
 1. Objective Functions for Regression
 A select objective functions commonly used in linear regression models are presented in this section. For reference, see a list of available loss functions from Keras Library at https://keras.io/losses/
