@@ -33,6 +33,7 @@ With this, we can define an objective function (distortion measure) give by,
 
 $$J = \displaystyle\sum_{n=1}^N \displaystyle\sum_{k=1}^K r_{nk}\parallel\mathbf{x}_{n}-\boldsymbol\mu_{k}\parallel^2
 $$
+
 <br>
 This represents the sum of squares of distance of each data point to its assigned cluster center. The objective is to find $\{r_{nk}\}$ and $\{\boldsymbol\mu_{k}\}$ that minimizes the distortion measure $J$.
 
