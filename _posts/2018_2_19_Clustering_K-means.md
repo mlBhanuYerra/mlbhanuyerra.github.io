@@ -1,3 +1,10 @@
+---
+layout: post
+title: Centroid-based Clustering: K-Means Algorithm
+subtitle: Application of K-mean algorithm to simple datasets
+tags: [Clustering, K-means, Successive optimization, E-M algorithm]
+comments: true
+---
 
 # Centroid-based Clustering: K-means Algorithm
 
@@ -7,7 +14,7 @@ Application of K-means algorithm on a simple dataset.<br>
 <b>Dataset</b>: <a href="http://www.stat.cmu.edu/~larry/all-of-statistics/=data/faithful.dat">Old Faithful dataset</a>
 <br>
 <b>Model</b>: K-means Clustering<br>
-<b>Algorithm</b>: Succesive optimization. A simple case of Expectation-Maximization algorithm.
+<b>Algorithm</b>: Successive optimization. A simple case of Expectation-Maximization algorithm.
 
 ## K-means Clustering
 
