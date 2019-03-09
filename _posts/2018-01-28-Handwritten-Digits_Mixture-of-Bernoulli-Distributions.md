@@ -2,7 +2,8 @@
 layout: post
 title: Clusterning Handwritten Digits using Mixture of Bernoulli Distributions
 subtitle: My foray into generative models
-tags: [Generative models, Mixture Models, Bernoulli, MNIST, Handwritten digits, E-M algorithm]
+tags: [Generative models, Mixture Models, Bernoulli, MNIST, Handwritten digits, E-M algorithm, Unsupervised Learning]
+image: "https://kogence.com/app/wiki/images/d/d9/JobT114-MNISTdigits.png"
 comments: true
 ---
 
@@ -24,7 +25,6 @@ where, $$\mathbf{x} = (x_1,...,x_D)^T$$, and  $$\boldsymbol{\mu} = (\mu_1,...,\m
 Now consider a finite mixture of $$K$$ multivariate Bernoulli distributions given by,
 
 $$p(\mathbf{x}\,|\, \boldsymbol{\mu}, \boldsymbol{\pi}) = \displaystyle\sum_{k=1}^K  \pi_k p(\mathbf{x}\,|\,\boldsymbol{\mu}_k)$$ 
-
 where,<br>
 <br>$$\boldsymbol\mu = \{\boldsymbol\mu_1,...,\boldsymbol\mu_K\}$$ 
 or
@@ -83,14 +83,10 @@ With the above background, the E-M algorithm takes the following form.
 Calculation of the responsibilites make the E step of the E-M algorithm.
 
 $$\gamma(z_{nk})\,=\,\mathbb{E} \left[ z_{nk} \right] \,=\,\frac{\pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)}{\displaystyle\sum_{j=1}^K\,\pi_j\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_j)}$$
-
 <b>M-Step</b>:<br>
 Maximizing the expectation of the complete-data log likelihood with respect to $$\boldsymbol\mu_k$$ and $$\boldsymbol\pi_k$$ yields the M step of the E-M algorithm:
-
 $$\boldsymbol\mu_k\,=\,\frac{1}{N_k}\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})\mathbf{x}_n$$
-
 and
-
 $$\pi_{k}\,=\,\frac{N_k}{N}$$
 
 where, $$N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$$ 

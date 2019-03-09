@@ -3,6 +3,7 @@ layout: post
 title: An Introduction to Objective Functions Used in Machine Learning
 subtitle: What is the difference between Maximum Likelihood & Cross-Entropy?
 tags: [Theory, Objective Functions, Loss Functions, Cross-Entropy, Maximum Likelihood Estimation, Statistical Framework]
+image: "http://www.turingfinance.com/wp-content/uploads/2015/07/Multimodal-Fitness-Landscape.png"
 comments: true
 ---
 
@@ -24,7 +25,7 @@ $$\boldsymbol{y_i}(\boldsymbol{x_i, w}) = w_0+w_1 x_{i1}+w_2 x_{i2} +...+w_D x_{
 
 Where, 𝜀ᵢ is random error due to (i) wrong choice of a linear relationship, (ii) omission of othe relevant independent variables, (iii) meaurement error, and (iv) instrumental variables — measured variables are proxies of “real” variables. The objective of linear regression is to estimate the <b>w</b>s given a random sample of the population.
 
-$$\boldsymbol{\hat{y}_i}(\boldsymbol{x_i, \hat{w}}) = \hat{w}_0+\hat{w}_1 x_{i1}+\hat{w}_2 x_{i2} +...+\hat{w}_D x_{iD} ,\quad i=1,2,..N$$
+$$\boldsymbol{\widehat{y}_i}(\boldsymbol{x_i, \widehat{w}}) = \widehat{w}_0+\widehat{w}_1 x_{i1}+\widehat{w}_2 x_{i2} +...+\widehat{w}_D x_{iD} ,\quad i=1,2,..N$$
 
 and the difference between the true dependent variable yᵢ and the model estimated dependent variable ŷᵢ is referred as residual error: eᵢ = yᵢ -ŷᵢ. The parameters <b>w</b>s are estimated by minimizing an objective function, which takes various functional forms as presented below.
 
@@ -57,11 +58,17 @@ where R(<b>w</b>) represent regularization function on the parameters <b>w</b> a
 
 <b><i>Ridge Regression:</i></b> Adds a L2-norm of the parameters to the objective function. Also known as weight decay, as the learning algorithm leads the weights to decay towards zero.
 
-$$\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^2 = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \sum_{i=0}^D {w_i}^2$$
+$$\begin{aligned}
+\mathscr{L} &= \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^2 \\
+&= \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \sum_{i=0}^D {w_i}^2
+\end{aligned}$$
 
 <b><i>Lasso Regression:</i></b> Adds an L-1 norm of the parameters to the objective function. Lasso regression leads to a sparse model as it drives some of the parameters to zero.
 
-$$\mathscr{L} = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^1   =    \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 +  \frac{\lambda}{2} \sum_{i=0}^D |w_i|$$
+$$\begin{aligned}
+\mathscr{L} &= \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 + \frac{\lambda}{2} \|\boldsymbol{w}\|^1 \\
+&= \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - y_i)^2 +  \frac{\lambda}{2} \sum_{i=0}^D |w_i|
+\end{aligned}$$
 
 
 For more on regularization, see: https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a
@@ -106,11 +113,11 @@ $$h(x) = - log(p(x))$$
 
 To extend this concept to the classification problem, lets state the classification problem as approximating the true probabilities y=(y₁,y₂…yk)ᵀ using the approximated probabilities $$ŷ = (𝜇₁,𝜇₂…𝜇_𝑘)ᵀ$$. This means the self-information approximated by the classification for observing y belonging to class k is -log(𝜇k). Since we know the true probabilities as y=(y₁,y₂…y_k)ᵀ, the expected self-information of observing y can be written as:
 
-$$H(\hat{y} , y) = E_{y}[h(\hat{y})] = - \sum_{k=1}^{K}{y_k}log({\hat{y}_k})= - \sum_{k=1}^{K}{y_k}log({\mu_k})$$
+$$H(\widehat{y} , y) = E_{y}[h(\widehat{y})] = - \sum_{k=1}^{K}{y_k}log({\widehat{y}_k})= - \sum_{k=1}^{K}{y_k}log({\mu_k})$$
 
 This is known as cross-entropy and can also be viewed as how closely the true probability distribution y is represented by the approximate probability distribution ŷ. If we apply this to all of our N observations in the data set we get total cross-entropy as:
 
-$$\mathscr{L} =\sum_{n=1}^N H(\hat{y}_i, y_i)  = - \sum_{n=1}^N \sum_{k=1}^K {y_{kn}} log({\mu_{kn}})$$
+$$\mathscr{L} =\sum_{n=1}^N H(\widehat{y}_i, y_i)  = - \sum_{n=1}^N \sum_{k=1}^K {y_{kn}} log({\mu_{kn}})$$
 
 See that the cross-entropy objective function looks exactly the same as the objective functions we formulated using MLE.
 

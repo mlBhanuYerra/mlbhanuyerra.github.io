@@ -1,11 +1,15 @@
 ---
 layout: page
 title: About me
-subtitle: A man is but a product of his thoughts; what he things, he becomes. - Gandhi
+subtitle: 
 bigimg: "/img/img_1272.png"
 ---
 
-## About
+### <b><i>"A man is but a product of his thoughts; what he things, he becomes."</i> - Gandhi</b>
+<hr>
+<br>
+
+## <b>About</b>
 Bhanu Yerra is a Supervisory Planner at the engineering consultancy firm WSP USA in Seattle, WA. He is expereinced in providing consulting and advisory services primiarly in travel demand forecasting and ridership forecasting discplines. His services have benefited Seattle area clients like Washington Department of Transportation, City of Seattle, Sound Transit, Washington State Ferries, Community Transit. He has 16 years of technical experience in travel demand model calibration and validation, forecasting, transit ridership/patronage forecasting, toll traffic forecasting, statistical/econometric analyses, GIS technologies etc.
 
 A few of his noteworthy projects include SR 520 Bridge Replacement, Alaksam Way Viaduct and Seawall Replacement, Sound Transit's ST3 Plan, Lynnwood Link Extension (Planning and New Starts Application), Sound Transit's Ridership Forecasting Model Update, Puget Sound Gateway Program, and Washington State Ferries Long Rane Plan. 

@@ -3,6 +3,7 @@ layout: post
 title: "Centroid-based Clustering K-Means Algorithm"
 subtitle: Application of K-means algorithm to simple datasets
 tags: [Clustering, K-means, Successive optimization, E-M algorithm]
+image: "https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2014/04/plot_mean_shift_1.png"
 comments: true
 ---
 
