@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Centroid-based Clustering: K-Means Algorithm
-subtitle: Application of K-mean algorithm to simple datasets
+title: "Centroid-based Clustering K-Means Algorithm"
+subtitle: Application of K-means algorithm to simple datasets
 tags: [Clustering, K-means, Successive optimization, E-M algorithm]
 comments: true
 ---
 
-Application of K-means algorithm on a simple dataset.<br>
 
 <b>Reference/Inspiration</b>: <b><i> Pattern Recognition and Machine Learning</i></b> by <i> Christopher M. Bishop.</i> Chapter 9, Figure 9.1.<br>
 <b>Dataset</b>: <a href="http://www.stat.cmu.edu/~larry/all-of-statistics/=data/faithful.dat">Old Faithful dataset</a>
@@ -18,13 +17,13 @@ Application of K-means algorithm on a simple dataset.<br>
 
 <b>Probelm Definition:</b>  Identifying groups (or clusters) in a data set.<br>
 
-Condier a data set $\{x_1,x_2,...,x_N\}$ consisteing of $N$ observations of random $D$-dimensional variable $\mathbf{x}$. Our goal is to group these observations into a given number of $K$ clusters. Notice that there are only independent variables and no dependent variables $\{y\}$ so to speak.
+Condier a data set $$\{x_1,x_2,...,x_N\}$$ consisteing of $$N$$ observations of random $$D$$-dimensional variable $$\mathbf{x}$$. Our goal is to group these observations into a given number of $$K$$ clusters. Notice that there are only independent variables and no dependent variables $$\{y\}$$ so to speak.
 <br>
 <br>
-A group can be imagined as a set of data points such that the members of the group are closer to each other compared to the data points outside the group. For this exercise, a simple Eculidean distance is used assessing how proximity of the data points or the distance between data points. Various other measures of "distance" were extensively studied and used in different fields. A simple way of capturing the distance between points within and outside a group can be achieved by using group centers or centroids. Instead of measurig the distance between any two data points, its easy to measure the distance between a data point and the $K$ centroids.
+A group can be imagined as a set of data points such that the members of the group are closer to each other compared to the data points outside the group. For this exercise, a simple Eculidean distance is used for assessing the proximity of the data points or the distance between data points. Various other measures of "distance" were extensively studied and used in different fields. A simple way of capturing the distance between points within and outside a group can be achieved by using group centers or centroids. Instead of measurig the distance between any two data points, its easy to measure the distance between a data point and the $$K$$ centroids.
 <br>
 <br>
-So to formalize, the objective of clustering is to find a set of $K$ D-dimensional vectors $\boldsymbol\mu_{k}$ for $k = 1,2,...,K$, where $\mu_{k}$ represents a centroid of cluster $k$. And an indicator $r_{nk} \in \{0,1\}$, where $k = 1,2,...,K$ represents the membership of observation(data point) $n$ to cluster $k$. Note that $\displaystyle\sum_{k=1}^K r_{nk} = 1$. In other words, if data point $x_n$ is assigned to cluster $k$, then $r_{nk} = 1$, and $r_{nj} = 0 \quad \forall j \neq k$.
+So to formalize, the objective of clustering is to find a set of $$K$$ D-dimensional vectors $$\boldsymbol\mu_{k}$$ for $$k = 1,2,...,K$$, where $$\boldsymbol\mu_{k}$$ represents a centroid of cluster $$k$$. And an indicator $$r_{nk} \in \{0,1\}$$, where $$k = 1,2,...,K$$ represents the membership of observation(data point) $$n$$ to cluster $$k$$. Note that $$\displaystyle\sum_{k=1}^K r_{nk} = 1$$. In other words, if data point $$x_n$$ is assigned to cluster $$k$$, then $$r_{nk} = 1$$, and $$r_{nj} = 0 \quad \forall j \neq k$$.
 <br>
 <br>
 With this, we can define an objective function (distortion measure) give by,
@@ -33,13 +32,13 @@ $$J = \displaystyle\sum_{n=1}^N \displaystyle\sum_{k=1}^K r_{nk}\parallel\mathbf
 $$
 
 <br>
-This represents the sum of squares of distance of each data point to its assigned cluster center. The objective is to find $\{r_{nk}\}$ and $\{\boldsymbol\mu_{k}\}$ that minimizes the distortion measure $J$.
+This represents the sum of squares of distance of each data point to its assigned cluster center. The objective is to find $$\{r_{nk}\}$$ and $$\{\boldsymbol\mu_{k}\}$$ that minimizes the distortion measure $$J$$.
 
 <b> Algorithm:</b><br>
-The above objective is achieved by iteratively solving for one of the $\{r_{nk}\}$ and $\{\boldsymbol\mu_{k}\}$, while keep the other fixed.
-<ui>
-<li>Step 1. Initialize the means $\boldsymbol\mu_{k}$ to random D-dimensional vectors
-<li>Step 2. <b>E Step</b>: Evaluate the $r_{nk}$ by assignging a data point to the closest cluster $k$.
+The above objective is achieved by iteratively solving for one of the $$\{r_{nk}\}$$ and $$\{\boldsymbol\mu_{k}\}$$, while keep the other fixed.
+
+* Step 1. Initialize the means $$\boldsymbol\mu_{k}$$ to random D-dimensional vectors
+* Step 2. <b>E Step</b>: Evaluate the $$r_{nk}$$ by assignging a data point to the closest cluster $$k$$.
 $$ r_{nk} =
   \begin{cases}
     1       & \quad \text{if } k = argmin_{j} \parallel\mathbf{x}_{n}-\boldsymbol\mu_{k}\parallel^2\\
@@ -47,11 +46,11 @@ $$ r_{nk} =
   \end{cases}
 $$
 <br>
-<li>Step 3. <b>M Step</b>: Re-estiamte the cluster centroids based on the assignment of data points to the clusters from E step.
+* Step 3. <b>M Step</b>: Re-estiamte the cluster centroids based on the assignment of data points to the clusters from E step.
 $$
 \boldsymbol\mu_k\,=\,\frac{\sum_{n}\,r_{nk}\mathbf{x}_n}{\sum_{n}\,r_{nk}}
 $$
-<li>Step 4. Evaluate the distortion measure $J$ and check for convergence.  If not converged, repeat from step 2.
+* Step 4. Evaluate the distortion measure $$J$$ and check for convergence.  If not converged, repeat from step 2.
 
 
 
@@ -319,10 +318,6 @@ a = pd.scatter_matrix(wheat1, alpha=0.8, figsize=(15,15),diagonal='kde', c=list(
 ```
 
     End of K-means iterations 99. Distortion measure is 587.319
-
-
-    //anaconda/envs/sklearnenv/lib/python3.5/site-packages/ipykernel_launcher.py:10: FutureWarning: pandas.scatter_matrix is deprecated. Use pandas.plotting.scatter_matrix instead
-      # Remove the CWD from sys.path while we load stuff.
 
 
 
