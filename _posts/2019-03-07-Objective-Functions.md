@@ -89,8 +89,10 @@ where,
 
 $$p(\boldsymbol{y}|\boldsymbol{x}, \boldsymbol{w}) = \prod_{k=1}^K{\mu_k}^{y_k}$$
 
+Note the above representation in itself does not restrict the functional form of the probabilities $$\mu_k = p(y_k = 1\mid x, w)$$.
 
-Note the above condition in itself does not restrict the functional form of the probability function p(yk = 1|x, w).
+$$\mu_k = p(y_k = 1| \boldsymbol{x}, \boldsymbol{w}) \sim Prob(\boldsymbol{x}| \boldsymbol{w})$$
+
 There are two approaches to solving the above classification problem: Maximum Likelihood Estimation and Cross Entropy. Both leads to the same objective function (and solution) but there is considerable amount of confusion as the ML community adopts the “cross entropy” explanation, while the folks with statistics background see this as maximum likelihood estimation. Interestingly, linear regression also has two approaches that lead to the same solution (thankfully a closed form solution): Ordinary Least Squares (uses Mean Squared Error, see above) and Maximum Likelihood Estimation.
 
 <b>Maximum Likelihood Estimation</b><br>

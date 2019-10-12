@@ -16,7 +16,7 @@ The intent of this blog is to summarize and document a personal project I did af
 
 # Mixture of Bernoulli Distribution
 
-First, consider a single multivariate Bernoulli distribution of $$D$$ independent binary variables $$x_i \in \{0, 1\}$$, where $$i = 1,...,D$$, each of which is in turn a univariate Bernoulli distribtion with parameter $$\mu_i$$, 
+First, consider a single multivariate random variable $$\mathbf{x}$$ with Bernoulli distribution of $$D$$ independent binary variables $$x_i \in \{0, 1\}$$, where $$i = 1,...,D$$, each of which is in turn a univariate Bernoulli distribtion with parameter $$\mu_i$$, 
 
 $$p(\mathbf{x}\,|\, \boldsymbol{\mu}) = \displaystyle\prod_{i=1}^D \mu_i^{x_i}(1-\mu_i)^{(1-x_i)} $$ 
 
@@ -83,10 +83,15 @@ With the above background, the E-M algorithm takes the following form.
 Calculation of the responsibilites make the E step of the E-M algorithm.
 
 $$\gamma(z_{nk})\,=\,\mathbb{E} \left[ z_{nk} \right] \,=\,\frac{\pi_{k}\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_k)}{\displaystyle\sum_{j=1}^K\,\pi_j\,p(\mathbf{x}_n\,|\,\boldsymbol{\mu}_j)}$$
+
+<br>
 <b>M-Step</b>:<br>
 Maximizing the expectation of the complete-data log likelihood with respect to $$\boldsymbol\mu_k$$ and $$\boldsymbol\pi_k$$ yields the M step of the E-M algorithm:
+
 $$\boldsymbol\mu_k\,=\,\frac{1}{N_k}\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})\mathbf{x}_n$$
+
 and
+
 $$\pi_{k}\,=\,\frac{N_k}{N}$$
 
 where, $$N_k\,=\,\displaystyle\sum_{n=1}^N\,\gamma(z_{nk})$$ 

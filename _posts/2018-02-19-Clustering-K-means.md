@@ -36,7 +36,7 @@ $$
 This represents the sum of squares of distance of each data point to its assigned cluster center. The objective is to find $$\{r_{nk}\}$$ and $$\{\boldsymbol\mu_{k}\}$$ that minimizes the distortion measure $$J$$.
 
 <b> Algorithm:</b><br>
-The above objective is achieved by iteratively solving for one of the $$\{r_{nk}\}$$ and $$\{\boldsymbol\mu_{k}\}$$, while keep the other fixed.
+The above objective is achieved by iteratively solving for one of the $$\{r_{nk}\}$$ and $$\{\boldsymbol\mu_{k}\}$$, while keeping the other fixed.
 
 * Step 1. Initialize the means $$\boldsymbol\mu_{k}$$ to random D-dimensional vectors
 * Step 2. <b>E Step</b>: Evaluate the $$r_{nk}$$ by assignging a data point to the closest cluster $$k$$.
@@ -283,7 +283,7 @@ To construct the data, seven geometric parameters of wheat kernels were measured
 6. asymmetry coefficient 
 7. length of kernel groove.
 
-All of these parameters were real-valued continuous.
+All of these are real-valued continuous variables.
 
 
 ```python
