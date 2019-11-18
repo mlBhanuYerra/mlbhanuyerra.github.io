@@ -10,15 +10,15 @@ comments: true
 ### Introduction
 Ever since I started watching Great British Baking Show, I added three books to my ever-increasing collection of cookbooks. Do I bake? No sir, I do not! At least not very well. I am not alone in this obsession with cooking shows, and cookbooks. According to NBCNews.com, roughly 18 million cookbooks were sold in 2018 and annual sales of cookbooks have increased by 21% or over in at least the last two years <sup>1, 2, 3</sup>.  The format of these books has changed too – more glossy paper with pictures than a collection of over-running text documenting the recipes.
 
-So, how do we find our cookbooks? We start at Amazon.com reviews, of course!  Combining my fascination with cookbooks and my passion for Data Science, here is my attempt to help my fellow cookbook-enthusiasts in finding their next purchase by building a recommender system based on book collections and user reviews at Amazon.com.  I've used Natural Language Processing (NLP) nmethodologies, and unsupervised learning in clustering books together in finding topics and sub-topics.
+So, how do we find our cookbooks? We start at Amazon.com reviews, of course!  Combining my fascination with cookbooks and my passion for Data Science, here is my attempt to help my fellow cookbook-enthusiasts in finding their next purchase by building a recommender system based on book collections and user reviews at Amazon.com.  I've used Natural Language Processing (NLP) methodologies, and unsupervised learning in clustering books together in finding topics and sub-topics.
 
-Who else would benefit from such a recommender system? Vendors looking to increase their online sales by making appropriate and relevant book suggestions to their customers. And small business book stores that have limited space to store their books, so they can pick titles similar to their previous sales. 
+Who else would benefit from such a recommender system? Vendors looking to increase their on-line sales by making appropriate and relevant book suggestions to their customers. And small business book stores that have limited space to store their books, so they can pick titles similar to their previous sales. 
 
 
 <hr>
 
 ### Approach
-My approach invloves building a hybrid recommendation system that combines:
+My approach involves building a hybrid recommendation system that combines:
 - NLP topic modeling techniques to build two content based recommender systems using book titles and book descriptions separately, and
 - SVD Matrix-factorization technique (similar to the method Simon Funk popularized for Netflix Prize<sup>4</sup>) for building a collaborative recommender system using user ratings of cookbooks.
 
@@ -29,7 +29,7 @@ Amazon reviews dataset consist of two separate data files in JSON format:
 - Products Table used for cookbook titles and description, and 
 - Reviews Table used for extracting user ratings.
 
-An illustation of how data looks on Amazon.com website is shown in Figure 1. 
+An illustration of how data looks on Amazon.com website is shown in Figure 1. 
 
 ![Cookbook Data Format on Amazon.com](/img/cookbooks/data_example.png "Amazon.com cookbooks")
 *Figure 1: A sample cookbook data point*
@@ -51,25 +51,25 @@ Reduced vectorized matrices from step 2 to a 10-dimensional space.
 - Non-negative Matrix Factorization
 - Latent Dirichilet Allocation
 
-A K-means clustering algorithm was tested after the dimensionality reduction step, but was later determined to be not too beneficial to the cookbook recommendation system. The model that produceds best results (in qualitative terms) is a combination of TF-IDF and LSA.
+A K-means clustering algorithm was tested after the dimensionality reduction step, but was later determined to be not too beneficial to the cookbook recommendation system. The model that produced best results (in qualitative terms) is a combination of TF-IDF and LSA.
 
 A number of tools and technologies were used in performing these steps and they include:
 - Python
 - Sci-kit learn
 - Pandas
 - Surprise, Python's Recommendation System Engine
-- NLTK (Natrual Language ToolKit)
+- NLTK (Natural Language ToolKit)
 
-The three stages I've used in building my hybrid recommedation system are as shown below. Note that each stage is distinct and does not share any inputs.  This was intentional to maximize what models can learn from each of those input categories in isolation. An alternative considered was to inform each step what the previous steps have learned but that makes the approach slightly larger than the scope of this project and I hope to explore that at a later date.
+The three stages I've used in building my hybrid recommendation system are as shown below. Note that each stage is distinct and does not share any inputs.  This was intentional to maximize what models can learn from each of those input categories in isolation. An alternative considered was to inform each step what the previous steps have learned but that makes the approach slightly larger than the scope of this project and I hope to explore that at a later date.
 
 ![Stages of Recommendation System](/img/cookbooks/Stages.png "Three Pronged Recommendation System")
 *Figure 2: Three Stages of the Recommendation System*
 
 
 #### Additional Data Exploration
-Additional exploration of the dimensionality reduction step was performed by projecting the ten dimensonal space onto two dimensions for some select combinations of dimensions to get a better understanding of the topic modeling space.
+Additional exploration of the dimensionality reduction step was performed by projecting the ten dimensional space onto two dimensions for some select combinations of dimensions to get a better understanding of the topic modeling space.
 
-My intuition was that book titles carry 'quality information' that is distinct from book descriptions, as titles are meant to be succinct, catchy and to the point.  Book tiltes are reviewed, edited and marketed carefully by authors and publishers and carry more weight than cookbook desciptions. On the other hand, book descriptions carry more 'quantity of information' as they use more vocabulary and are more likely to connect diverse concepts. The following two figures confirms this intuitions as the projected space of book titles after LSA is sharp, clean and distinct.  The projected space of book descriptions after LSA on the other hand, spreads and has intersecting branches/blobs (Figure 4). 
+My intuition was that book titles carry 'quality information' that is distinct from book descriptions, as titles are meant to be succinct, catchy and to the point.  Book titles are reviewed, edited and marketed carefully by authors and publishers and carry more weight than cookbook descriptions. On the other hand, book descriptions carry more 'quantity of information' as they use more vocabulary and are more likely to connect diverse concepts. The following two figures confirms this intuitions as the projected space of book titles after LSA is sharp, clean and distinct.  The projected space of book descriptions after LSA on the other hand, spreads and has intersecting branches/blobs (Figure 4). 
 
 ![Topic Modeling with Cookbook Titles](/img/cookbooks/Cookbook_Titles_noFigureDesc.png "Topic Modeling with Cookbook Titles")
 *Figure 3: Dimensionality Space of Cookbook Titles after LSA: Select projections from 10-dimensional space (Colors are based on K-Means algorithm and are used for illustration purpose only)*
@@ -80,7 +80,7 @@ My intuition was that book titles carry 'quality information' that is distinct f
 
 ### Model Results
 
-The model results are presented in a qualitative format for the two content based recommendation systems: Stage 1 & Stage 2. A quantitiave comparison against two 'naive' models were presented for Stage 3 model-based collaborative recommendation system.
+The model results are presented in a qualitative format for the two content based recommendation systems: Stage 1 & Stage 2. A quantitative comparison against two 'naive' models were presented for Stage 3 model-based collaborative recommendation system.
 
 For Stage 1 & 2, one approach would have been to introduce a new cookbook and check the 'relevance' of the recommendations.  Instead, I took an explorative approach:
 - Select a random book from the train data, 
@@ -95,7 +95,7 @@ Content based recommendation systems often suffer from "information confinement 
 
 #### Results: Content-based Recommendation System using Book Titles
 
-The model discovered a number of topics and sub-topics of cookbooks. There are nuemerous categories and is impractical to explore all that the model learned!! A few categories that stood out are below:
+The model discovered a number of topics and sub-topics of cookbooks. There are numerous categories and is impractical to explore all that the model learned!! A few categories that stood out are below:
 
 - Cakes
 - Cupcakes
@@ -109,7 +109,7 @@ The model discovered a number of topics and sub-topics of cookbooks. There are n
 - Pressure Cooker
 - Slow Cooker
 - Italian
-- Souther Food (Includes American southern food and italian southern!)
+- Souther Food (Includes American southern food and Italian southern!)
 - Chai & Tea
 
 ![Recommendation System with Titles](/img/cookbooks/titles/MetisPrj4_BookTitles.gif "Recommendation System with Titles")
@@ -120,10 +120,10 @@ The model discovered a number of topics and sub-topics of cookbooks. There are n
 A few categories that model discovered are:
 
 - Baking
-- Dessersts
+- Desserts
 - Chocolate
 - Cheese
-- Heralty Cooking
+- Healthy Cooking
 - Holiday Cooking
 - Gluten-free, Paleo etc.
 - Pies & Tarts
@@ -134,13 +134,23 @@ A few categories that model discovered are:
 
 
 #### Results: Collaborative Recommendation System using Book User Ratings
+Collaborative recommendation system was built using SVD matrix-factorization popularized by Simon Funk for Netflix prize. Python's recommendation system machine Surprise was used for this step. The results are compared against two naive solutions:
+1. <i>Naive Model #1</i> Suggest every cookbook to everyone. Because everyone loves cookbooks! That is a 5-star rating for every user, for every cookbook
+2. <i>Naive Model #2</i> Suggest average book rating to every user
+
+The model results were only slightly better than the above two naive solutions. RMSE for the models are as shown below:
+- Model RMSE = 0.92
+- <i>Naive Model #1</i> RMSE = 1.13
+- <i>Naive Model #2</i> RMEE = 0.93
 
 
 <hr>
 ### Conclusions
-The primary conclusions from the above image classification analysis are:
-1. Protyping a classification model using pretrained CNN features is quite effective and easier than fully building a deep neural network from scratch.
-2. Error analysis is quite useful, and provides insights on how models can be employed. 
+The primary conclusions from building the above recommendation systems are:
+1. Topic modeling was surprisingly effective with using just the titles!
+2. Using book descriptions for topic modeling diversified the topic compared to titles based recommendation system
+3. Having multiple recommendation systems (using tiles & description in the above case) was helpful in diversifying the user recommendations 
+4. Most Amazon ratings for cookbooks are pretty hight - everyone loves cookbooks. This means, a collaborative recommendation system is likely to overfit to higher ratings.
 
 <br>
 <br>
