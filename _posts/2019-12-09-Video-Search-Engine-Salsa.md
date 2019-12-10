@@ -82,7 +82,7 @@ When keypoints are identified for each frame in a video, the result will look as
 
 *Exhibit 5: OpenPose on a Salsa Dance Video Identifying Keypoints*
 
-![Spatiotemporal features extracted from OpenPose](/img/VideoSearch/Val_106_4nHElVbT3HY_OnlyPoses.mp4)
+![Spatiotemporal features extracted from OpenPose](/img/VideoSearch/Val_106_4nHElVbT3HY_onlyPoses.mp4)
 
 *Exhibit 6: Spatiotemporal features extracted from OpenPose*
 
