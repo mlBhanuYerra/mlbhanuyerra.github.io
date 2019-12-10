@@ -79,7 +79,7 @@ social-network-links:
 #  twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
-  linkedin: bhanu-yerra-40795a113
+  linkedin: bhanuyerra
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -96,7 +96,7 @@ share-links-active:
   twitter: false
   facebook: false
   google: false
-  linkedin: true
+  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
