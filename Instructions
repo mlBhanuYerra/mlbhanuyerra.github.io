@@ -1,3 +1,3 @@
-1. bundle exev jekyll serve
+1. bundle exec jekyll serve
 2. create new *.md file with date. Date should be past
 3. 
