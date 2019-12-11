@@ -3,20 +3,20 @@ layout: post
 title: Building a Video Search Engine
 subtitle: A case study using Salsa dance videos
 image: "/img/VideoSearch/red_female_2.jpg"
-tags: [Video search engine, search enginer, video, conten-based recommendation systems, recommendation system, LSA, Latent Semantic Analysis, Matrix Factorization, OpenPose, Pose Estimation, Computer Vision, Neual Networks, 2D Pose Estimates, Search, video, YouTube, Salsa, Salsa Videos]
+tags: [Video search engine, search engine, video, content-based recommendation systems, recommendation system, LSA, Latent Semantic Analysis, Matrix Factorization, OpenPose, Pose Estimation, Computer Vision, Neural Networks, 2D Pose Estimates, Search, video, YouTube, Salsa, Salsa Videos]
 comments: true
 ---
 
 ### Introduction
-A natural progression in the field of computer vision following unprecedented progress in image classification tasks is towards video and video understanding, especially how it relates to identifying human subjects and activities.  A number of datasets and benchmarks are being estblished in this area<sup>1</sup>.
+A natural progression in the field of computer vision following unprecedented progress in image classification tasks is towards video and video understanding, especially how it relates to identifying human subjects and activities.  A number of datasets and benchmarks are being established in this area<sup>1</sup>.
 
-In parallel, further progess is being made in 2D image related computer vision tasks such as fine-grained classification, image segmention, 3D image construction, robot vision, scene flow estimation and <i><b>human pose estimation</b></i>.
+In parallel, further progress is being made in 2D image related computer vision tasks such as fine-grained classification, image segmentation, 3D image construction, robot vision, scene flow estimation and <i><b>human pose estimation</b></i>.
 
 As part of my final Data Science project at Metis bootcamp, I've decided to marry these two parallel tracks - video and human pose estimation in specific - to create a content-based video search engine.  Since applying 2D human pose estimation for video search is a novel idea with "no proof of concept", I have simplified my approach by selecting single performer, fixed location single camera video footage of Salsa dance videos.
 <hr>
 
 ### Video
-Users on YouTube, the sedond largest search engine after Goolge, watch over 1 billion hours of video every single day. Users on Facebook, the most popular social networking site in the world, watch about 100 million hours of video every single day!!  These platforms are interested in providing tools to their users in searching and discovering interesting and relevant content.
+Users on YouTube, the second largest search engine after Google, watch over 1 billion hours of video every single day. Users on Facebook, the most popular social networking site in the world, watch about 100 million hours of video every single day!!  These platforms are interested in providing tools to their users in searching and discovering interesting and relevant content.
 
 The tools these platforms provide for searching primarily use a video's metadata (location, time, content creator etc.), titles, descriptions, transcripts (either user created or machine generated from audio), user ratings, user comments etc. in retrieving 'similar' results. These search tools do not skim the actual content of the video itself.  Video is not skimmable or indexable for searches.
 
@@ -26,21 +26,21 @@ The visual features in the videos are too many and they are computationally expe
 
 *Exhibit 1: Salsa Dance Video (Credit: World Salsa Summit 2016. Dancer: Valentino Sinatra, Italy)*
 
-The video search enginer I built as part of my Metis Project 5, has indexed about 70 minutes of Salsa dance videos from YouTube and will return a match as shown in the exhibit below.  The Salsa steps performed by Yeifren (in the middle) and Adriano (on the right) are similar to Valentino's (on the left). In these clips, the peformers walk back to the center of the stage and perform a number of turns as they face towards left of the stage.
+The video search engine I built as part of my Metis Project 5, has indexed about 70 minutes of Salsa dance videos from YouTube and will return a match as shown in the exhibit below.  The Salsa steps performed by Yeifren (in the middle) and Adriano (on the right) are similar to Valentino's (on the left). In these clips, the performers walk back to the center of the stage and perform a number of turns as they face towards left of the stage.
 
 ![Video](/img/VideoSearch/Val_106_Result.mp4)
 
-*Exhibit 2: A search results from the Video Search Enginer (Credit: World Salsa Summit 2016. Dancers: Valentino Sinatra, Italy; Yeifren Mata, Venezuela; Adriano Leropoli, Montreal)*
+*Exhibit 2: A search results from the Video Search Engine (Credit: World Salsa Summit 2016. Dancers: Valentino Sinatra, Italy; Yeifren Mata, Venezuela; Adriano Leropoli, Montreal)*
 
 
 ### Methodology
 
-There are two primarily steps in building the video search engine. First step is to download & process the video footage and run it through OpenPose for feature extraction. OpenPose is a human pose estimation algorithm developed by Carnegie Mellon University researchers (Zhe Cao et al). More on OpenPose is presented in the later sections. Second step is model building and testing query metrics.  Models were built using matrix decomposition mehtods (PCA, LSA, NMF). Euclidean distance and cosine similarity were tested as query metrics. A feature engineering/feature representation exercise was also performed as part of this second step - flattened features and Hu moments of the feautres for each frame were tested.  
+There are two primarily steps in building the video search engine. First step is to download & process the video footage and run it through OpenPose for feature extraction. OpenPose is a human pose estimation algorithm developed by Carnegie Mellon University researchers (Zhe Cao et al). More on OpenPose is presented in the later sections. Second step is model building and testing query metrics.  Models were built using matrix decomposition methods (PCA, LSA, NMF). Euclidean distance and cosine similarity were tested as query metrics. A feature engineering/feature representation exercise was also performed as part of this second step - flattened features and Hu moments of the features for each frame were tested.  
 
 The best combination of "feature representation/dimensionality reduction/query metric" obtained was by using plain flattened pose estimates with LSA and cosine similarity.
 
 ![Methodology](/img/VideoSearch/Methodology.png)
-*Exhibit 3: Methodology for builing a video search engine*
+*Exhibit 3: Methodology for building a video search engine*
 
 #### Data
 The data for this project come from processing YouTube salsa videos (links below).
@@ -61,10 +61,10 @@ Salsa dance footage I have collected is from the following four videos with tota
 To summarize, the videos used consists of:
 
 1. Single dancers
-2. Footage of single camera with fixed location (no moving camers!).  Only camera angle and zoom level are reflected in the footage.
+2. Footage of single camera with fixed location (no moving cameras!).  Only camera angle and zoom level are reflected in the footage.
 3. Reduced video frame rate of 8 frames per second (fps), down from the original rate of 24 fps.
 4. Fixed screen resolution at 640 (width) X 360 (height) pixels.
-5. About 70 minutes of processed footate and formatted into 3 second clips (over 1,400 observations).
+5. About 70 minutes of processed footage and formatted into 3 second clips (over 1,400 observations).
 
 <b>OpenPose: Realtime 2D Multi-person Pose Estimation Algorithm</b>
 
@@ -82,12 +82,12 @@ When keypoints are identified for each frame in a video, the result will look as
 
 *Exhibit 5: OpenPose on a Salsa Dance Video Identifying Keypoints*
 
-![Spatiotemporal features extracted from OpenPose](/img/VideoSearch/Val_106_4nHElVbT3HY_onlyPoses.mp4)
+![Spatio-temporal features extracted from OpenPose](/img/VideoSearch/Val_106_4nHElVbT3HY_onlyPoses.mp4)
 
-*Exhibit 6: Spatiotemporal features extracted from OpenPose*
+*Exhibit 6: Spatio-temporal features extracted from OpenPose*
 
 ### Results
-A few results from indexing the salsa videos and performing a search using cosine-similarity are shown below. The top right video is the search clip, and the search resutls should be read from left to right, and then top to bottom.   
+A few results from indexing the salsa videos and performing a search using cosine-similarity are shown below. The top right video is the search clip, and the search results should be read from left to right, and then top to bottom.   
 
 Note that the search engine indexing is sufficient and effective in retrieving video clips where the dancers are just walking to their spots (Exhibit 7).  This is an interesting result in itself, and demonstrates how this indexing method can be used for video editing.  Manual editing of these clips will take hours even for "small" unprocessed footage of 2.5 hours, while the search engine takes less than a second to run and is capable of finding all such clips in the footage (not just the closes "neighbors").
 
@@ -95,16 +95,27 @@ Note that the search engine indexing is sufficient and effective in retrieving v
 
 *Exhibit 7: Search using a Clip of Dancers Taking Position*
 
-![Takeing the position](/img/VideoSearch/full_lsa_cos_4.mp4)
+![Taking the position](/img/VideoSearch/full_lsa_cos_4.mp4)
 
 *Exhibit 8: Moving to the left and a turn*
 
 ### Other Applications
 A video search engine like this has a number of applications. A few are listed below:
 
-![Other Applicatiopns](/img/VideoSearch/OtherApplications.png)
+![Other Applications](/img/VideoSearch/OtherApplications.png)
 
 *Exhibit 8: Other Applications for Video Search Engine*
+
+I have a few more ideas on how platforms like YouTube and Facebook can use video search on their current websites. A few conceptual ideas are shown below:
+
+![A concept for video search layout on YouTube](/img/VideoSearch/YouTube_Salsa_Layout.png)
+
+*Exhibit 9: A Conceptual Layout of Video Search on YouTube Salsa Videos*
+
+
+![A concept for video search layout on YouTube](/img/VideoSearch/YouTube_Football_Layout.png)
+
+*Exhibit 10: A Conceptual Layout of Video Search on YouTube Football Game Videos*
 
 <hr>
 ### References
