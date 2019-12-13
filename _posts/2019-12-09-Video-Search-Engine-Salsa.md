@@ -89,15 +89,21 @@ When keypoints are identified for each frame in a video, the result will look as
 ### Results
 A few results from indexing the salsa videos and performing a search using cosine-similarity are shown below. The top right video is the search clip, and the search results should be read from left to right, and then top to bottom.   
 
-Note that the search engine indexing is sufficient and effective in retrieving video clips where the dancers are just walking to their spots (Exhibit 7).  This is an interesting result in itself, and demonstrates how this indexing method can be used for video editing.  Manual editing of these clips will take hours even for "small" unprocessed footage of 2.5 hours, while the search engine takes less than a second to run and is capable of finding all such clips in the footage (not just the closes "neighbors").
+Note that the search engine indexing is sufficient and effective in retrieving video clips where the dancers are just walking to their spots (Exhibit 7).  This is an interesting result in itself, and demonstrates how this indexing method can be used for video editing.  Manual editing of these clips will take hours even for "small" unprocessed footage of 2.5 hours, while the search engine takes less than a second to run and is capable of finding all such clips in the footage.
 
 ![Taking the position](/img/VideoSearch/full_lsa_cos_10.mp4)
 
-*Exhibit 7: Search using a Clip of Dancers Taking Position*
+*Exhibit 7: Search using a Clip of Dancers Making an Entry*
+
+#### A few more results
+![All turns](/img/VideoSearch/turns_1.mp4)
+*Exhibit 8: Dancers Performing Turns*
+
+![Taking the position](/img/VideoSearch/test_5.mp4)
+*Exhibit 9: Turn while bearing to the left (& swoop down!)*
 
 ![Taking the position](/img/VideoSearch/full_lsa_cos_4.mp4)
-
-*Exhibit 8: Moving to the left and a turn*
+*Exhibit 10: Moving to the left and a turn*
 
 ### Other Applications
 A video search engine like this has a number of applications. A few are listed below:
