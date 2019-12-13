@@ -33,6 +33,11 @@ The video search engine I built as part of my Metis Project 5, has indexed about
 *Exhibit 2: A search results from the Video Search Engine (Credit: World Salsa Summit 2016. Dancers: Valentino Sinatra, Italy; Yeifren Mata, Venezuela; Adriano Leropoli, Montreal)*
 
 
+
+<b>Upate</b>
+One very subtle movement between Valentino (left) and the retrieved clip of Yiefren (center), is they both touch/hit their knees/legs!! The timing of it in the clips is off, but the model picks up on this!! I've watched these clips for many days before I even noticed it! I think its a fascinating result.  
+
+
 ### Methodology
 
 There are two primarily steps in building the video search engine. First step is to download & process the video footage and run it through OpenPose for feature extraction. OpenPose is a human pose estimation algorithm developed by Carnegie Mellon University researchers (Zhe Cao et al). More on OpenPose is presented in the later sections. Second step is model building and testing query metrics.  Models were built using matrix decomposition methods (PCA, LSA, NMF). Euclidean distance and cosine similarity were tested as query metrics. A feature engineering/feature representation exercise was also performed as part of this second step - flattened features and Hu moments of the features for each frame were tested.  
