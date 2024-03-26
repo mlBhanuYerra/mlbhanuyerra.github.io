@@ -5,7 +5,7 @@ subtitle:
 bigimg: "/img/img_1272.png"
 ---
 
-### <b><i>"A man is but a product of his thoughts; what he things, he becomes."</i> - Gandhi</b>
+### <b><i>"A man is but a product of his thoughts; what he thinks, he becomes."</i> - Gandhi</b>
 <hr>
 <br>
 
